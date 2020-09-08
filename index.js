@@ -76,7 +76,7 @@ function dogFeeder(weight, age) {
         return weight * 0.05;
     } else if(age < .33){
     return weight * 0.10;
-}
+    }
 }
 
 console.log(dogFeeder(15, 1));
@@ -89,32 +89,33 @@ console.log(dogFeeder(15, 1));
 // use math.random to determine the computers choice 
 // hint while you can complete this with only conditionals based on strings it may help to equate choice to a number 
 
-
-function compyPick(num){
-  return Math.floor(Math.random() * Math.floor(num));
-}
-
-compyPick(3);
-
 const paper = 0;
 const scissors = 1;
 const rock = 2;
+let result;
+let cPick;
 
-function game(choice) {
-  if (choice === compyPick()) {
-    console.log('It\'s a draw!');
-  } else {
-    if (choice > compyPick()) {
-      console.log('You win!');
-  } else {
-      if (choice < compyPick()) {
-        console.log('You lose!');
-      }
-    }
-  }
+function compyPick(num){
+return cPick = Math.floor(Math.random() * Math.floor(num));
 }
 
-console.log(game(paper));
+console.log(compyPick(3));
+
+function game(choice) {
+    if(choice == 0 && cPick == 2) {
+      return result = 'You Win!';
+    } else if(choice == 2 && cPick == 0) {
+      return result = 'You Lose!';
+    } else if(choice === cPick) {
+    return result = 'It\'s a draw!';
+    } else if(choice > cPick) {
+    return result = 'You win!';
+    } else if (choice < cPick) {
+    return result = 'You lose!';
+    }
+}
+
+console.log(game(scissors));
   
 
 /************************************************************** Task 5 **************************************************************/
