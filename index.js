@@ -77,8 +77,9 @@ function dogFeeder(weight, age) {
     } else if(age < .33){
     return weight * 0.10;
 }
+}
 
-dogFeeder(15, 1)
+console.log(dogFeeder(15, 1));
 
 
 /************************************************************** Task 4 **************************************************************/
