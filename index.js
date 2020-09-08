@@ -1,24 +1,33 @@
 /************************************************************** Task 1: Warm-up! **************************************************************/
 //Task a: declare a variable called votingAge, console log true if age > 18 (no function required)
 
+let votingAge = 22;
 
-
+if(votingAge > 18) { 
+console.log(true);
+}
 
 
 //Task b: declare a variable and then use a conditional to change the value of that variable based on the value assigned to a second variable (no function required)
 
+let thisIsVar = true;
 
-
+if(2 < 3) {
+    thisIsVar = false;
+}
 
 
 //Task c: Convert string ("1999") to integer (1999)  (no function required) // hint look up the Number method
 
-
+Number("1999");
 
 
 
 //Task d: Write a function to multiply a*b 
 
+function multi(a,b) {
+  return Sum = a * b;
+}
 
 
 
@@ -27,15 +36,16 @@
 //Age in Dog years
 //write a function that takes your age and returns it to you in dog years - they say that 1 human year is equal to seven dog years 
 
-
-
+function dogYears(age) {
+    return ageInDogYears = age * 7; 
+}
 
 
 /************************************************************** Task 3 **************************************************************/
-//Dog feeder 
-//takes weight in pounds and age in years (note if the dog is a puppy the age will be a decimal) and returns the number of pounds of raw food to feed in a day.
+// Dog feeder 
+// takes weight in pounds and age in years (note if the dog is a puppy the age will be a decimal) and returns the number of pounds of raw food to feed in a day.
 
-//feeding requirements
+// feeding requirements
 // adult dogs at least 1 year 
 // up to 5 lbs - 5% of their body weight
 // 6 - 10 lbs - 4% of their body weight 
@@ -51,6 +61,24 @@
   
 
 
+function dogFeeder(weight, age) {
+    if(age >= 1 && weight <= 5) {
+        return weight * 0.05;
+    } else if(age >= 1 && weight >= 6 && weight <= 10){
+        return weight * 0.04;
+    } else if(age >= 1 && weight >= 11 && weight <= 15){
+        return weight * 0.03;
+    } else if(age >= 1 && weight <= 15){
+        return weight * 0.02;
+    } else if(age < .75 && age >= 0.583){
+        return weight * 0.04;
+    } else if(age < .5 && age >= 0.333){
+        return weight * 0.05;
+    } else if(age < .33){
+    return weight * 0.10;
+}
+
+dogFeeder(15, 1)
 
 
 /************************************************************** Task 4 **************************************************************/
@@ -60,7 +88,32 @@
 // use math.random to determine the computers choice 
 // hint while you can complete this with only conditionals based on strings it may help to equate choice to a number 
 
-  
+
+function compyPick(num){
+  return Math.floor(Math.random() * Math.floor(num));
+}
+
+compyPick(3);
+
+const paper = 0;
+const scissors = 1;
+const rock = 2;
+
+function game(choice) {
+  if (choice === compyPick()) {
+    console.log('It\'s a draw!');
+  } else {
+    if (choice > compyPick()) {
+      console.log('You win!');
+  } else {
+      if (choice < compyPick()) {
+        console.log('You lose!');
+      }
+    }
+  }
+}
+
+console.log(game(paper));
   
 
 /************************************************************** Task 5 **************************************************************/
@@ -111,8 +164,3 @@
 /************************************************************** Stretch **************************************************************/
 //Take Rock, Paper, Sissors further
 //update your rock papers sissors code below to take a prompt from a user using the window object
-
-
-
-
-
