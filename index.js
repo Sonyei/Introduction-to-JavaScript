@@ -4,32 +4,37 @@
 let votingAge = 22;
 
 if(votingAge > 18) { 
-console.log(true);
-}
+// console.log(true);
+};
 
 
 //Task b: declare a variable and then use a conditional to change the value of that variable based on the value assigned to a second variable (no function required)
 
-let thisIsVar = true;
+let thisIsVar = 19;
+let notAnotherVar = 6;
 
-if(2 < 3) {
+if(thisIsVar < notAnotherVar) {
     thisIsVar = false;
-}
+};
+
+// console.log(thisIsVar);
 
 
 //Task c: Convert string ("1999") to integer (1999)  (no function required) // hint look up the Number method
 
-Number("1999");
+const str = "1999";
+
+// console.log(Number(str))
 
 
 
 //Task d: Write a function to multiply a*b 
 
 function multi(a,b) {
-  return Sum = a * b;
-}
+  return a * b;
+};
 
-
+// console.log(multi(1, 2))
 
 
 /************************************************************** Task 2 **************************************************************/
@@ -38,7 +43,9 @@ function multi(a,b) {
 
 function dogYears(age) {
     return ageInDogYears = age * 7; 
-}
+};
+
+// console.log(dogYears(30));
 
 
 /************************************************************** Task 3 **************************************************************/
@@ -68,7 +75,7 @@ function dogFeeder(weight, age) {
         return weight * 0.04;
     } else if(age >= 1 && weight >= 11 && weight <= 15){
         return weight * 0.03;
-    } else if(age >= 1 && weight <= 15){
+    } else if(age >= 1 && weight < 15){
         return weight * 0.02;
     } else if(age < .75 && age >= 0.583){
         return weight * 0.04;
@@ -77,9 +84,9 @@ function dogFeeder(weight, age) {
     } else if(age < .33){
     return weight * 0.10;
     }
-}
+};
 
-console.log(dogFeeder(15, 1));
+ // console.log(dogFeeder(16, 1));
 
 
 /************************************************************** Task 4 **************************************************************/
@@ -93,19 +100,19 @@ const paper = 0;
 const scissors = 1;
 const rock = 2;
 let result;
-let cPick;
 
 function compyPick(num){
-return cPick = Math.floor(Math.random() * Math.floor(num));
+return Math.floor(Math.random() *(num));
 }
 
-console.log(compyPick(3));
+// console.log(compyPick(3));
 
-function game(choice) {
+function game(choice, compyPick) {
+    let cPick = compyPick(3);
     if(choice == 0 && cPick == 2) {
-      return result = 'You Win!';
+      return result = 'You win';
     } else if(choice == 2 && cPick == 0) {
-      return result = 'You Lose!';
+      return result = 'You lose';
     } else if(choice === cPick) {
     return result = 'It\'s a draw!';
     } else if(choice > cPick) {
@@ -113,9 +120,9 @@ function game(choice) {
     } else if (choice < cPick) {
     return result = 'You lose!';
     }
-}
+};
 
-console.log(game(scissors));
+// console.log(game(paper, compyPick));
   
 
 /************************************************************** Task 5 **************************************************************/
@@ -123,12 +130,25 @@ console.log(game(scissors));
 //a. KM to Miles - should take the number of kilometers and convert it to the equal number of miles
 
 
+let km;
 
+function convertKM(km) {
+   return km*0.621371;
+}
+
+// console.log(convertKM(24));
 
 
 //b. Feet to CM - should take the number of feet and convert it to the equal number of centimeters
   
 
+let feet;
+
+function convertFeet(feet) {
+   return feet*30.48;
+}
+
+// console.log(convertFeet(18));
 
 
 
@@ -137,8 +157,13 @@ console.log(game(scissors));
 // create a function called annoyingSong
 // the function should take a starting number as an argument and count down - at each iteration it should log (number) bottles of soda on the wall, (number) bottles of soda, take one down pass it around (number left over) bottles of soda on the wall`
   
+  function annoyingSong(num){
+      for(let i = num; i > 0 ; i--) {
+          console.log(i + ' bottles of soda on the wall, ' + i + ' bottles of soda, take one down pass it around ' + (i - 1) + ' bottles of soda on the wall.')
+      }
+  }
 
-
+  console.log(annoyingSong(100))
 
 
 /************************************************************** Task 7 **************************************************************/
@@ -149,7 +174,25 @@ console.log(game(scissors));
 //70s should be Cs 
 //60s should be D 
 //and anything below 60 should be F
-  
+
+let grade;
+
+function grades(grade){
+    let MyResult;
+    if (grade >= 90) {
+        return myResult = 'A';
+    } else if(grade >= 80) {
+        return MyResult = 'B';
+    } else if(grade >= 70){
+        return MyResult = 'C';
+    } else if(grade >= 60){
+        return MyResult = 'D';
+    } else if(grade <= 59){
+        return MyResult = 'F';
+    }
+}
+
+// console.log(grades(10));
 
   
   
@@ -159,10 +202,9 @@ console.log(game(scissors));
 // Hint - you may need to study tomorrow's traning kit on arrays 
 // try looking up the .includes() method
 
-
-
-
+/[A-Za-z]g/
 
 /************************************************************** Stretch **************************************************************/
 //Take Rock, Paper, Sissors further
 //update your rock papers sissors code below to take a prompt from a user using the window object
+
